@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import getRandomHexColor from 'utils/randomColor';
-import css from './Statistics.module.css'
-
+import css from './Statistics.module.css';
 
 export default function Statistics(props) {
   const { title, stats } = props;
@@ -11,7 +10,11 @@ export default function Statistics(props) {
       <h2 className={css.title}>{title}</h2>
       <ul className={css.stat_list}>
         {stats.map(stat => (
-          <li className={css.item} key={stat.id} style={{backgroundColor: getRandomHexColor()}}>
+          <li
+            className={css.item}
+            key={stat.id}
+            style={{ backgroundColor: getRandomHexColor() }}
+          >
             <span className={css.label}>{stat.label}</span>
             <span className={css.percentage}>{stat.percentage}%</span>
           </li>
